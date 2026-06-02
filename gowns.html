@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gowns – Vogue Vista | Evening, Party & Designer Gowns</title>
+<meta name="description" content="Shop stunning evening gowns, party gowns and designer dresses at Vogue Vista. Satin, silk, organza gowns at best prices in India.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--blue:#1e40af;--blue-light:#60a5fa;--blue-dark:#1d4ed8;--rose:#e11d48;--rose-dark:#be123c;--gold:#D4A017;--dark:#0f172a;--text:#2d3748;--text-light:#718096;--border:#e2e8f0;--bg-light:#f8fafc;--star:#f5a623;--radius-lg:16px;--radius-md:12px;--radius-sm:8px;--shadow-sm:0 2px 6px rgba(0,0,0,0.04);--shadow-md:0 8px 24px rgba(0,0,0,0.07);--shadow-lg:0 16px 36px rgba(225,29,72,0.1);--transition:all 0.3s cubic-bezier(0.25,0.46,0.45,0.94)}
+  body{font-family:'Poppins',sans-serif;color:var(--text);background:#fcfcfc;overflow-x:hidden}
+  a{text-decoration:none;color:inherit;transition:var(--transition)} ul{list-style:none}
+  .sticky-header-container{position:sticky;top:0;z-index:1000;background:transparent;pointer-events:none}
+  header{background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);pointer-events:auto;box-shadow:0 4px 20px rgba(0,0,0,0.04)}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 40px;max-width:1400px;margin:0 auto;gap:24px}
+  .logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+  .logo-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--blue),var(--blue-dark));border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:700}
+  .logo-text .brand{font-size:19px;font-weight:700;color:var(--dark)} .logo-text .tagline{font-size:9px;color:var(--text-light);font-weight:500}
+  .header-search{flex:1;max-width:480px;display:flex;align-items:center;background:#f8fafc;border:1.5px solid var(--border);border-radius:30px;padding:2px;transition:var(--transition)}
+  .header-search:focus-within{border-color:var(--rose);background:#fff;box-shadow:0 0 0 4px rgba(225,29,72,0.08)}
+  .header-search input{flex:1;border:none;background:transparent;padding:9px 16px;font-size:13px;font-family:'Poppins',sans-serif;outline:none}
+  .header-search button{background:linear-gradient(135deg,var(--rose),var(--rose-dark));border:none;cursor:pointer;width:36px;height:36px;border-radius:50%;color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center}
+  .header-actions{display:flex;align-items:center;gap:20px}
+  .header-actions a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:var(--text);font-weight:500;position:relative}
+  .header-actions a i{font-size:18px;color:var(--text-light);transition:var(--transition)}
+  .header-actions a:hover{color:var(--rose)} .header-actions a:hover i{color:var(--rose);transform:translateY(-2px)}
+  .cart-count{position:absolute;top:-4px;right:-6px;background:var(--rose);color:#fff;font-size:9px;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700}
+  nav{background:rgba(255,255,255,0.98);backdrop-filter:blur(12px);max-width:1200px;width:calc(100% - 80px);margin:10px auto;border-radius:50px;box-shadow:0 8px 25px rgba(30,64,175,0.12);border:1px solid rgba(30,64,175,0.1);pointer-events:auto;overflow:hidden}
+  .nav-inner{display:flex;align-items:center;justify-content:space-evenly;flex-wrap:wrap;padding:0 16px;gap:2px}
+  .nav-inner a{color:var(--blue-dark);font-size:12px;font-weight:600;padding:9px 16px;display:block;transition:var(--transition);white-space:nowrap;border-radius:30px;margin:3px 2px}
+  .nav-inner a:hover,.nav-inner a.active{background:var(--blue);color:#fff} .nav-inner a.sale{color:#e11d48;font-weight:700}
+  /* HERO – Dark elegant for gowns */
+  .page-hero {
+    position: relative;
+    height: 440px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #02091c 0%, #0d1b3e 100%);
+    display: flex;
+    align-items: center;
+  }
+  .page-hero-content {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    z-index: 2;
+  }
+  .page-hero-text {
+    flex: 1.2;
+    max-width: 650px;
+  }
+  .page-hero-img-card {
+    flex: 0.8;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .page-hero-img-card img {
+    width: 100%;
+    max-width: 440px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 3px solid rgba(212, 160, 23, 0.45);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+    transition: transform 0.5s ease, border-color 0.5s ease;
+  }
+  .page-hero-img-card img:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: rgba(212, 160, 23, 0.9);
+  }
+  .hero-badge{display:inline-block;background:linear-gradient(135deg,var(--rose),var(--rose-dark));color:#fff;font-size:10px;font-weight:700;padding:5px 14px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+  .hero-h1{font-size:52px;font-weight:800;color:#fff;line-height:1.1;margin-bottom:12px}
+  .hero-h1 span{color:#fda4af;font-style:italic}
+  .hero-sub{color:rgba(255,255,255,0.8);font-size:14px;line-height:1.7;margin-bottom:28px}
+  .btn-shop{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--rose),var(--rose-dark));color:#fff;padding:13px 32px;border-radius:30px;font-size:13px;font-weight:600;box-shadow:0 4px 15px rgba(225,29,72,0.4);transition:var(--transition)}
+  .btn-shop:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(225,29,72,0.5)}
+  /* GOWN OCCASION STRIP */
+  .occasion-strip{background:#fff;padding:18px 40px;border-bottom:1px solid var(--border)}
+  .occasion-strip-inner{max-width:1400px;margin:0 auto;display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;align-items:center}
+  .occasion-strip-inner::-webkit-scrollbar{display:none}
+  .occ-chip{padding:8px 18px;background:var(--bg-light);border:1.5px solid var(--border);border-radius:20px;font-size:12px;font-weight:600;color:var(--text);cursor:pointer;transition:var(--transition);white-space:nowrap;flex-shrink:0}
+  .occ-chip:hover,.occ-chip.active{border-color:var(--rose);color:var(--rose);background:rgba(225,29,72,0.05)}
+  /* SECTION */
+  .section{padding:50px 40px;max-width:1400px;margin:0 auto}
+  .section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:10px}
+  .section-title{font-size:26px;font-weight:700;color:var(--dark)} .section-title span{color:var(--rose)}
+  .section-subtitle{font-size:13px;color:var(--text-light);margin-bottom:30px}
+  .view-all{font-size:12px;color:var(--rose);font-weight:600;text-transform:uppercase}
+  /* PRODUCTS */
+  .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .product-card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;transition:var(--transition);box-shadow:var(--shadow-sm)}
+  .product-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-6px)}
+  .product-img-wrap{position:relative;aspect-ratio:3/4;overflow:hidden;background:#f7f8fc}
+  .product-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease}
+  .product-card:hover .product-img-wrap img{transform:scale(1.07)}
+  .product-badge{position:absolute;top:10px;left:10px;background:linear-gradient(135deg,var(--rose),var(--rose-dark));color:#fff;font-size:9px;font-weight:700;padding:4px 9px;border-radius:20px;text-transform:uppercase}
+  .product-badge.gold-badge{background:linear-gradient(135deg,#D4A017,#b8860b)}
+  .product-badge.blue-badge{background:linear-gradient(135deg,#2563eb,#1d4ed8)}
+  .product-badge.green-badge{background:linear-gradient(135deg,#059669,#047857)}
+  .product-badge.dark-badge{background:linear-gradient(135deg,#1e1b4b,#312e81)}
+  .product-wishlist{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-light);cursor:pointer;transition:var(--transition)}
+  .product-wishlist:hover{color:#e11d48;transform:scale(1.1)}
+  .product-info{padding:14px 16px 16px}
+  .product-brand{font-size:9px;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;font-weight:600}
+  .product-name{font-size:13px;font-weight:600;color:var(--dark);margin-bottom:8px;line-height:1.4;min-height:36px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .product-price{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .price-now{font-size:15px;font-weight:700;color:var(--dark)} .price-was{font-size:12px;color:var(--text-light);text-decoration:line-through} .price-off{font-size:11px;color:#059669;font-weight:700}
+  .btn-add{width:100%;margin-top:10px;background:linear-gradient(135deg,var(--rose),var(--rose-dark));color:#fff;border:none;padding:10px;border-radius:var(--radius-sm);font-size:12px;font-weight:600;cursor:pointer;transition:var(--transition);display:flex;align-items:center;justify-content:center;gap:6px;font-family:'Poppins',sans-serif}
+  .btn-add:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(225,29,72,0.3)}
+  /* GLAMOUR BANNER */
+  .glamour-banner{background:linear-gradient(135deg,#0c0c1e 0%,#1a0533 50%,#0c0c1e 100%);margin:0 40px 50px;border-radius:var(--radius-lg);padding:50px;display:flex;align-items:center;gap:40px}
+  .glamour-text h3{color:#fff;font-size:30px;font-weight:700;margin-bottom:10px}
+  .glamour-text h3 span{color:#fda4af}
+  .glamour-text p{color:rgba(255,255,255,0.65);font-size:13px;line-height:1.7;max-width:480px;margin-bottom:20px}
+  .glamour-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--rose),var(--rose-dark));color:#fff;padding:13px 30px;border-radius:30px;font-size:13px;font-weight:600;transition:var(--transition)}
+  .glamour-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(225,29,72,0.4)}
+  .glamour-stats{display:flex;gap:30px;flex-shrink:0}
+  .gstat{text-align:center}
+  .gstat-num{font-size:32px;font-weight:800;color:#fda4af}
+  .gstat-lbl{font-size:11px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.5px}
+  /* REVIEWS */
+  .reviews-section{background:#f8fafc;padding:60px 0;border-top:1px solid var(--border)}
+  .reviews-inner{max-width:1400px;margin:0 auto;padding:0 40px}
+  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .review-card{background:#fff;border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-sm);transition:var(--transition)}
+  .review-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+  .review-stars{color:var(--star);font-size:12px;margin-bottom:10px}
+  .review-text{font-size:13px;color:var(--text);line-height:1.7;margin-bottom:14px;font-style:italic}
+  .review-author{display:flex;align-items:center;gap:10px}
+  .review-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+  .review-name{font-size:13px;font-weight:600;color:var(--dark)} .review-location{font-size:11px;color:var(--text-light)}
+  /* TRUST */
+  .trust-section{background:#fff;padding:45px 0;border-top:1px solid var(--border)}
+  .trust-inner{max-width:1400px;margin:0 auto;padding:0 40px}
+  .trust-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+  .trust-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px}
+  .trust-icon{font-size:26px;color:var(--rose)} .trust-label{font-size:12px;font-weight:700;color:var(--dark);text-transform:uppercase} .trust-desc{font-size:11px;color:var(--text-light);line-height:1.5}
+  /* FOOTER */
+  footer{background:#111;color:rgba(255,255,255,0.7);padding:55px 0 0}
+  .footer-inner{max-width:1400px;margin:0 auto;padding:0 40px}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;padding-bottom:45px}
+  .footer-col h4{color:#fff;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:18px}
+  .footer-col p{font-size:12px;line-height:1.75;color:rgba(255,255,255,0.5)}
+  .footer-col ul li{margin-bottom:9px} .footer-col ul li a{font-size:12px;color:rgba(255,255,255,0.5);transition:var(--transition)} .footer-col ul li a:hover{color:var(--blue-light)}
+  .footer-social{display:flex;gap:10px;margin-top:16px}
+  .footer-social a{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);font-size:13px;transition:var(--transition)}
+  .footer-social a:hover{background:var(--rose);color:#fff}
+  .footer-newsletter{display:flex;margin-top:14px}
+  .footer-newsletter input{flex:1;padding:10px 14px;border:none;background:rgba(255,255,255,0.08);color:#fff;font-size:12px;outline:none;border-radius:8px 0 0 8px;font-family:'Poppins',sans-serif}
+  .footer-newsletter button{background:var(--rose);color:#fff;border:none;padding:10px 18px;cursor:pointer;font-size:12px;font-weight:600;border-radius:0 8px 8px 0;font-family:'Poppins',sans-serif}
+  .pay-badges{display:flex;gap:6px;margin-top:12px}
+  .pay-badge{background:rgba(255,255,255,0.1);border-radius:4px;padding:3px 9px;font-size:10px;color:rgba(255,255,255,0.7);font-weight:600}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding:16px 40px;font-size:11px;color:rgba(255,255,255,0.35);text-align:center}
+  #scrollTop{position:fixed;bottom:26px;right:26px;width:40px;height:40px;background:var(--rose);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;cursor:pointer;box-shadow:0 4px 14px rgba(225,29,72,0.4);opacity:0;pointer-events:none;transition:opacity 0.3s,transform 0.3s;z-index:200}
+  #scrollTop.visible{opacity:1;pointer-events:auto} #scrollTop:hover{transform:translateY(-3px)}
+</style>
+</head>
+<body>
+<div class="sticky-header-container">
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">VV</div>
+        <div class="logo-text"><div class="brand">Vogue Vista</div><div class="tagline">Your Fashion, Our Passion!</div></div>
+      </a>
+      <div class="header-search">
+        <input type="text" placeholder="Search evening gowns, party dresses…">
+        <button><i class="fas fa-search"></i></button>
+      </div>
+      <div class="header-actions">
+        <a href="wishlist.html" style="position:relative;"><i class="far fa-heart"></i><span class="wishlist-count" style="position:absolute; top:-5px; right:-8px; background:#e11d48; color:#fff; font-size:9px; width:16px; height:16px; border-radius:50%; display:none; align-items:center; justify-content:center; font-weight:700;">0</span>Wishlist</a>
+        
+        <a href="cart.html" class="cart-badge"><i class="fas fa-shopping-bag"></i><span class="cart-count" style="display:none;">0</span>Cart</a>
+      </div>
+    </div>
+  </header>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html">Home</a>
+      <a href="new-arrivals.html">New Arrivals</a>
+      <a href="wedding-collection.html">Wedding Collection</a>
+      <a href="sarees.html">Sarees</a>
+      <a href="lehengas.html">Lehengas</a>
+      <a href="salwar-suits.html">Salwar Suits</a>
+      <a href="gowns.html" class="active">Gowns</a>
+      <a href="ready-to-ship.html" class="sale">Ready To Ship 🔥</a>
+    </div>
+  </nav>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <div class="page-hero-text">
+      <div class="hero-badge">⭐ Premium Cocktail Gowns</div>
+      <h1 class="hero-h1">Elegant Evening <span>Gowns</span></h1>
+      <p class="hero-sub">Make an unforgettable entrance with our majestic floor-length satin gowns, sequins reception wear and designer party gowns.</p>
+      <a href="#products" class="btn-shop">Browse Gowns <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="page-hero-img-card">
+      <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=80" alt="Gowns Showcase">
+    </div>
+  </div>
+</section>
+
+<div class="occasion-strip">
+  <div class="occasion-strip-inner">
+    <div class="occ-chip active">All Gowns</div>
+    <div class="occ-chip">Evening Gowns</div>
+    <div class="occ-chip">Cocktail Dresses</div>
+    <div class="occ-chip">Reception Gowns</div>
+    <div class="occ-chip">Maxi Dresses</div>
+    <div class="occ-chip">Mermaid Gowns</div>
+    <div class="occ-chip">Ball Gowns</div>
+    <div class="occ-chip">Indo-Western</div>
+    <div class="occ-chip">Mini Dresses</div>
+  </div>
+</div>
+
+<section class="section" id="products">
+  <div class="section-header">
+    <div>
+      <h2 class="section-title">Our <span>Gown</span> Collection</h2>
+      <p class="section-subtitle">200+ designer gowns for every glamorous occasion — cocktail to red carpet</p>
+    </div>
+    <a href="#" class="view-all">View All →</a>
+  </div>
+  <div class="products-grid">
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&w=500&q=80" alt="Evening Gown">
+        <div class="product-badge">Evening Wear</div>
+        <div class="product-wishlist"><i class="far fa-heart"></i></div>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Couture Lane</div>
+        <div class="product-name">Embellished Satin Evening Gown – Midnight Navy Off-Shoulder</div>
+        <div class="product-price"><span class="price-now">&#8377;5,999</span><span class="price-was">&#8377;8,500</span><span class="price-off">29% off</span></div>
+        <button class="btn-add"><i class="fas fa-gem"></i> Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=500&q=80" alt="Cocktail Dress">
+        <div class="product-badge">Cocktail</div>
+        <div class="product-wishlist"><i class="far fa-heart"></i></div>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Glamour Studio</div>
+        <div class="product-name">Sequined Cocktail Mini Dress – Rose Gold Party Wear</div>
+        <div class="product-price"><span class="price-now">&#8377;3,499</span><span class="price-was">&#8377;5,200</span><span class="price-off">33% off</span></div>
+        <button class="btn-add"><i class="fas fa-gem"></i> Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=500&q=80" alt="Reception Gown">
+        <div class="product-badge gold-badge">Reception</div>
+        <div class="product-wishlist"><i class="far fa-heart"></i></div>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Bridal Couture</div>
+        <div class="product-name">Floor-Length Silk Reception Gown – Ivory with Pearl Details</div>
+        <div class="product-price"><span class="price-now">&#8377;12,999</span><span class="price-was">&#8377;18,000</span><span class="price-off">28% off</span></div>
+        <button class="btn-add"><i class="fas fa-gem"></i> Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" alt="Organza Gown">
+        <div class="product-badge">Organza</div>
+        <div class="product-wishlist"><i class="far fa-heart"></i></div>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Floral Couture</div>
+        <div class="product-name">Floral Organza Maxi Gown – Blush Pink Cocktail Party</div>
+        <div class="product-price"><span class="price-now">&#8377;4,499</span><span class="price-was">&#8377;6,800</span><span class="price-off">34% off</span></div>
+        <button class="btn-add"><i class="fas fa-gem"></i> Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80" alt="Mermaid Gown">
+        <div class="product-badge dark-badge">Mermaid</div>
+        <div class="product-wishlist"><i class="far fa-heart"></i></div>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Elite Couture</div>
+        <div class="product-name">Sequined Mermaid Gown – Deep Emerald Backless Design</div>
+        <div class="product-price"><span class="price-now">&#8377;8,999</span><span class="price-was">&#8377;13,000</span><span class="price-off">31% off</span></div>
+        <button class="btn-add"><i class="fas fa-gem"></i> Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=500&q=80" alt="Maxi Dress">
+        <div class="product-badge green-badge">Maxi</div>
+        <div class="product-wishlist"><i class="far fa-heart"></i></div>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Style House</div>
+        <div class="product-name">Printed Chiffon Maxi Dress – Tropical Floral Summer Gown</div>
+        <div class="product-price"><span class="price-now">&#8377;1,899</span><span class="price-was">&#8377;3,000</span><span class="price-off">37% off</span></div>
+        <button class="btn-add"><i class="fas fa-gem"></i> Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=500&q=80" alt="Ball Gown">
+        <div class="product-badge gold-badge">Ball Gown</div>
+        <div class="product-wishlist"><i class="far fa-heart"></i></div>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Royal Couture</div>
+        <div class="product-name">Cinderella Ball Gown – Sky Blue Tulle with Crystal Work</div>
+        <div class="product-price"><span class="price-now">&#8377;9,499</span><span class="price-was">&#8377;14,000</span><span class="price-off">32% off</span></div>
+        <button class="btn-add"><i class="fas fa-gem"></i> Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e1?auto=format&fit=crop&w=500&q=80" alt="Indo Western Gown">
+        <div class="product-badge blue-badge">Indo-Western</div>
+        <div class="product-wishlist"><i class="far fa-heart"></i></div>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Fusion Edit</div>
+        <div class="product-name">Indo-Western Anarkali Gown – Teal with Embroidered Yoke</div>
+        <div class="product-price"><span class="price-now">&#8377;5,299</span><span class="price-was">&#8377;7,800</span><span class="price-off">32% off</span></div>
+        <button class="btn-add"><i class="fas fa-gem"></i> Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=500&q=80" alt="A-Line Gown">
+        <div class="product-badge">A-Line</div>
+        <div class="product-wishlist"><i class="far fa-heart"></i></div>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Vogue Vista</div>
+        <div class="product-name">A-Line Satin Gown with Sheer Back – Champagne Gold</div>
+        <div class="product-price"><span class="price-now">&#8377;4,799</span><span class="price-was">&#8377;7,200</span><span class="price-off">33% off</span></div>
+        <button class="btn-add"><i class="fas fa-gem"></i> Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1610030470217-cfb5f63cf9fb?auto=format&fit=crop&w=500&q=80" alt="Off Shoulder Gown">
+        <div class="product-badge">Off-Shoulder</div>
+        <div class="product-wishlist"><i class="far fa-heart"></i></div>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Glamour Studio</div>
+        <div class="product-name">Off-Shoulder Ruffle Gown – Deep Wine for Parties</div>
+        <div class="product-price"><span class="price-now">&#8377;3,999</span><span class="price-was">&#8377;6,000</span><span class="price-off">33% off</span></div>
+        <button class="btn-add"><i class="fas fa-gem"></i> Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=500&q=80" alt="Cape Gown">
+        <div class="product-badge dark-badge">Cape Style</div>
+        <div class="product-wishlist"><i class="far fa-heart"></i></div>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Elite Couture</div>
+        <div class="product-name">Embroidered Cape-Style Gown – Midnight Black Designer</div>
+        <div class="product-price"><span class="price-now">&#8377;7,499</span><span class="price-was">&#8377;11,000</span><span class="price-off">32% off</span></div>
+        <button class="btn-add"><i class="fas fa-gem"></i> Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1608748010899-18f300247112?auto=format&fit=crop&w=500&q=80" alt="Mini Dress">
+        <div class="product-badge">Mini Dress</div>
+        <div class="product-wishlist"><i class="far fa-heart"></i></div>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Club Couture</div>
+        <div class="product-name">Sequined Party Mini Dress – Fuchsia Pink Club Wear</div>
+        <div class="product-price"><span class="price-now">&#8377;2,299</span><span class="price-was">&#8377;3,500</span><span class="price-off">34% off</span></div>
+        <button class="btn-add"><i class="fas fa-gem"></i> Add to Cart</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GLAMOUR BANNER -->
+<div class="glamour-banner">
+  <div class="glamour-text">
+    <h3>Make Your <span>Entrance</span> Unforgettable</h3>
+    <p>Every gown in our collection is designed to turn heads. From intimate cocktail parties to grand receptions — we have the perfect dress for your moment in the spotlight.</p>
+    <a href="#products" class="glamour-btn"><i class="fas fa-gem"></i> Shop All Gowns</a>
+  </div>
+  <div class="glamour-stats">
+    <div class="gstat"><div class="gstat-num">200+</div><div class="gstat-lbl">Gown Styles</div></div>
+    <div class="gstat"><div class="gstat-num">4.9★</div><div class="gstat-lbl">Avg Rating</div></div>
+    <div class="gstat"><div class="gstat-num">3Day</div><div class="gstat-lbl">Delivery</div></div>
+  </div>
+</div>
+
+<section class="reviews-section">
+  <div class="reviews-inner">
+    <h2 class="section-title" style="margin-bottom:6px;">Our <span>Gown Girls</span> Love Us</h2>
+    <p style="font-size:13px;color:var(--text-light);margin-bottom:28px;">4.9 ★ from 4,200+ gown reviews</p>
+    <div class="reviews-grid">
+      <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"The midnight navy gown was absolutely stunning! I wore it to my company gala and got SO many compliments. The fabric is luxurious and the fit was perfect!"</div><div class="review-author"><div class="review-avatar">N</div><div><div class="review-name">Natasha Joshi</div><div class="review-location">Mumbai, Maharashtra</div></div></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Ordered the organza maxi gown for my cousin's cocktail party. It arrived in 2 days, the quality is exceptional. Will definitely order more gowns!"</div><div class="review-author"><div class="review-avatar">S</div><div><div class="review-name">Shreya Pillai</div><div class="review-location">Bangalore, Karnataka</div></div></div></div>
+      <div class="review-card"><div class="review-stars">★★★★☆</div><div class="review-text">"The mermaid gown exceeded my expectations. The sequins are high quality and don't fall off. I was the star of the evening! Fast delivery too."</div><div class="review-author"><div class="review-avatar">R</div><div><div class="review-name">Riya Kapoor</div><div class="review-location">Delhi, India</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-section">
+  <div class="trust-inner">
+    <div class="trust-grid">
+      <div class="trust-item"><div class="trust-icon"><i class="fas fa-gem"></i></div><div class="trust-label">200+ Gowns</div><div class="trust-desc">Cocktail to red-carpet styles</div></div>
+      <div class="trust-item"><div class="trust-icon"><i class="fas fa-ruler-combined"></i></div><div class="trust-label">Custom Sizing</div><div class="trust-desc">Tailoring available on request</div></div>
+      <div class="trust-item"><div class="trust-icon"><i class="fas fa-truck-fast"></i></div><div class="trust-label">Express Delivery</div><div class="trust-desc">3–5 days pan-India shipping</div></div>
+      <div class="trust-item"><div class="trust-icon"><i class="fas fa-rotate-left"></i></div><div class="trust-label">Easy Returns</div><div class="trust-desc">7-day hassle-free returns</div></div>
+      <div class="trust-item"><div class="trust-icon"><i class="fas fa-lock"></i></div><div class="trust-label">Secure Payment</div><div class="trust-desc">100% encrypted checkout</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>About Vogue Vista</h4><p>Your destination for glamorous gowns and premium ethnic wear. Make every occasion extraordinary with our designer collection.</p><div class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-pinterest-p"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div><div class="pay-badges"><span class="pay-badge">VISA</span><span class="pay-badge">MC</span><span class="pay-badge">UPI</span><span class="pay-badge">EMI</span><span class="pay-badge">COD</span></div></div>
+      <div class="footer-col"><h4>Categories</h4><ul><li><a href="new-arrivals.html">New Arrivals</a></li><li><a href="wedding-collection.html">Wedding Collection</a></li><li><a href="sarees.html">Sarees</a></li><li><a href="lehengas.html">Lehengas</a></li><li><a href="salwar-suits.html">Salwar Suits</a></li><li><a href="gowns.html">Gowns</a></li><li><a href="ready-to-ship.html">Ready To Ship</a></li></ul></div>
+      <div class="footer-col"><h4>Support</h4><ul><li><a href="#">Track Order</a></li><li><a href="#">Size Guide</a></li><li><a href="#">Returns & Exchange</a></li><li><a href="#">Styling Tips</a></li><li><a href="#">Contact Us</a></li><li><a href="#">FAQs</a></li></ul></div>
+      <div class="footer-col"><h4>Stay Connected</h4><p style="margin-bottom:12px;">Get exclusive gown drops & styling tips.</p><div class="footer-newsletter"><input type="email" placeholder="Your email address"><button>Subscribe</button></div><p style="margin-top:14px;"><i class="fas fa-map-marker-alt" style="color:#fda4af;margin-right:6px;"></i>50, Greater Noida, UP – 201306</p><p style="margin-top:6px;"><i class="fas fa-envelope" style="color:#fda4af;margin-right:6px;"></i>support@voguevista.com</p></div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Vogue Vista. All Rights Reserved. | 200+ Designer Gowns for Every Occasion</div>
+</footer>
+<div id="scrollTop"><i class="fas fa-arrow-up"></i></div>
+<script>
+  document.querySelectorAll('.occ-chip').forEach(c=>c.addEventListener('click',function(){document.querySelectorAll('.occ-chip').forEach(x=>x.classList.remove('active'));this.classList.add('active');}));
+  
+  const scrollBtn=document.getElementById('scrollTop');
+  window.addEventListener('scroll',()=>scrollBtn.classList.toggle('visible',window.scrollY>400));
+  scrollBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+<script src="store.js"></script>
+</body>
+</html>

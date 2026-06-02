@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Cart – Vogue Vista</title>
+<meta name="description" content="View and manage your shopping cart at Vogue Vista.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--blue:#1e40af;--blue-light:#60a5fa;--blue-dark:#1d4ed8;--dark:#0f172a;--text:#2d3748;--text-light:#718096;--border:#e2e8f0;--bg-light:#f8fafc;--radius-lg:16px;--radius-md:12px;--radius-sm:8px;--shadow-sm:0 2px 6px rgba(0,0,0,0.04);--shadow-md:0 8px 24px rgba(0,0,0,0.07);--transition:all 0.3s ease}
+  body{font-family:'Poppins',sans-serif;color:var(--text);background:#f8fafc;min-height:100vh}
+  a{text-decoration:none;color:inherit} ul{list-style:none}
+  /* HEADER */
+  header{background:#fff;border-bottom:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,0.04);position:sticky;top:0;z-index:100}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;max-width:1200px;margin:0 auto;gap:24px}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--blue),var(--blue-dark));border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:700}
+  .logo-text .brand{font-size:18px;font-weight:700;color:var(--dark)} .logo-text .tagline{font-size:9px;color:var(--text-light)}
+  .header-links{display:flex;align-items:center;gap:20px}
+  .header-links a{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--blue);padding:8px 16px;border-radius:30px;border:1.5px solid var(--border);transition:var(--transition)}
+  .header-links a:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+  /* MAIN */
+  .cart-page{max-width:1100px;margin:0 auto;padding:40px 24px}
+  .page-title{font-size:28px;font-weight:700;color:var(--dark);margin-bottom:6px}
+  .page-subtitle{font-size:13px;color:var(--text-light);margin-bottom:32px}
+  .cart-layout{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start}
+  /* CART ITEMS */
+  .cart-items{display:flex;flex-direction:column;gap:16px}
+  .cart-card{background:#fff;border-radius:var(--radius-lg);padding:20px;display:flex;gap:18px;box-shadow:var(--shadow-sm);transition:var(--transition)}
+  .cart-card:hover{box-shadow:var(--shadow-md)}
+  .cart-img{width:100px;height:120px;border-radius:var(--radius-md);object-fit:cover;flex-shrink:0;background:#f0f4f8}
+  .cart-details{flex:1}
+  .cart-brand{font-size:10px;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px;font-weight:600;margin-bottom:4px}
+  .cart-name{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:10px;line-height:1.4}
+  .cart-price{font-size:18px;font-weight:700;color:var(--dark);margin-bottom:12px}
+  .cart-qty{display:flex;align-items:center;gap:0}
+  .qty-btn{width:32px;height:32px;border:1.5px solid var(--border);background:#fff;cursor:pointer;font-size:14px;font-weight:700;color:var(--blue);display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+  .qty-btn:first-child{border-radius:8px 0 0 8px} .qty-btn:last-child{border-radius:0 8px 8px 0}
+  .qty-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .qty-num{width:40px;height:32px;border:1.5px solid var(--border);border-left:none;border-right:none;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--dark);background:#fff}
+  .cart-remove{margin-left:auto;align-self:flex-start;background:none;border:none;color:var(--text-light);cursor:pointer;font-size:16px;padding:4px;transition:var(--transition)}
+  .cart-remove:hover{color:#e11d48;transform:scale(1.1)}
+  /* SUMMARY */
+  .cart-summary{background:#fff;border-radius:var(--radius-lg);padding:26px;box-shadow:var(--shadow-sm);position:sticky;top:90px}
+  .summary-title{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+  .summary-row{display:flex;justify-content:space-between;margin-bottom:12px;font-size:13px;color:var(--text)}
+  .summary-row span:last-child{font-weight:600;color:var(--dark)}
+  .summary-total{display:flex;justify-content:space-between;font-size:17px;font-weight:700;color:var(--dark);padding-top:14px;margin-top:6px;border-top:2px solid var(--border)}
+  .summary-total span:last-child{color:var(--blue)}
+  .btn-checkout{display:block;width:100%;text-align:center;background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;padding:14px;border-radius:var(--radius-md);font-size:14px;font-weight:700;margin-top:18px;cursor:pointer;border:none;font-family:'Poppins',sans-serif;transition:var(--transition)}
+  .btn-checkout:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(30,64,175,0.35)}
+  .promo-row{display:flex;gap:8px;margin-top:14px}
+  .promo-input{flex:1;border:1.5px solid var(--border);border-radius:8px;padding:9px 14px;font-size:12px;font-family:'Poppins',sans-serif;outline:none}
+  .promo-input:focus{border-color:var(--blue)}
+  .promo-btn{background:var(--blue);color:#fff;border:none;padding:9px 16px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif}
+  .secure-note{display:flex;align-items:center;justify-content:center;gap:6px;font-size:11px;color:var(--text-light);margin-top:14px}
+  /* EMPTY STATE */
+  .empty-state{background:#fff;border-radius:var(--radius-lg);padding:60px 40px;text-align:center;box-shadow:var(--shadow-sm)}
+  .empty-icon{font-size:56px;color:var(--border);margin-bottom:16px}
+  .empty-title{font-size:22px;font-weight:700;color:var(--dark);margin-bottom:8px}
+  .empty-sub{font-size:13px;color:var(--text-light);margin-bottom:24px}
+  .btn-shop-now{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;padding:13px 32px;border-radius:30px;font-size:13px;font-weight:600}
+  .btn-shop-now:hover{transform:translateY(-2px)}
+  /* PAYMENT ICONS */
+  .pay-icons{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .pay-chip{background:var(--bg-light);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:10px;font-weight:700;color:var(--text-light)}
+  footer{text-align:center;padding:24px;font-size:12px;color:var(--text-light);border-top:1px solid var(--border);margin-top:40px}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">VV</div>
+      <div class="logo-text"><div class="brand">Vogue Vista</div><div class="tagline">Your Fashion, Our Passion!</div></div>
+    </a>
+    <div class="header-links">
+      <a href="index.html"><i class="fas fa-store"></i> Continue Shopping</a>
+      <a href="wishlist.html" style="position:relative;"><i class="far fa-heart"></i><span class="wishlist-count" style="position:absolute; top:-5px; right:-8px; background:#e11d48; color:#fff; font-size:9px; width:16px; height:16px; border-radius:50%; display:none; align-items:center; justify-content:center; font-weight:700;">0</span>Wishlist</a>
+    </div>
+  </div>
+</header>
+
+<main class="cart-page">
+  <div class="page-title">My Shopping Cart</div>
+  <div class="page-subtitle" id="cart-subtitle">Loading cart…</div>
+
+  <div id="cart-empty" class="empty-state" style="display:none">
+    <div class="empty-icon"><i class="fas fa-shopping-bag"></i></div>
+    <div class="empty-title">Your cart is empty!</div>
+    <div class="empty-sub">Looks like you haven't added anything yet. Start shopping and find something beautiful.</div>
+    <a href="index.html" class="btn-shop-now"><i class="fas fa-arrow-left"></i> Shop Now</a>
+  </div>
+
+  <div id="cart-content" class="cart-layout" style="display:none">
+    <div class="cart-items" id="cart-items-list"></div>
+    <div class="cart-summary">
+      <div class="summary-title">Order Summary</div>
+      <div class="summary-row"><span>Subtotal (<span id="cart-item-count">0</span> items)</span><span id="summary-subtotal">₹0</span></div>
+      <div class="summary-row"><span>Delivery</span><span style="color:#059669">FREE</span></div>
+      <div class="summary-row"><span>Discount</span><span id="summary-discount" style="color:#059669">-₹0</span></div>
+      <div class="summary-total"><span>Total</span><span id="summary-total">₹0</span></div>
+      <button class="btn-checkout" onclick="alert('🎉 Order placed successfully! Thank you for shopping with Vogue Vista.'); localStorage.removeItem('vv_cart'); renderCart();">
+        <i class="fas fa-lock"></i> Proceed to Checkout
+      </button>
+      <div class="promo-row">
+        <input type="text" class="promo-input" placeholder="Enter promo code (e.g. VOGUE10)">
+        <button class="promo-btn">Apply</button>
+      </div>
+      <div class="secure-note"><i class="fas fa-shield-alt"></i> 100% Secure SSL Encrypted Payment</div>
+      <div class="pay-icons">
+        <span class="pay-chip">VISA</span><span class="pay-chip">Mastercard</span>
+        <span class="pay-chip">UPI</span><span class="pay-chip">EMI</span><span class="pay-chip">COD</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>© 2025 Vogue Vista. All Rights Reserved.</footer>
+
+<script src="store.js"></script>
+<script>
+function renderCart() {
+  const cart = getCart();
+  const subtitle = document.getElementById('cart-subtitle');
+  const empty = document.getElementById('cart-empty');
+  const content = document.getElementById('cart-content');
+  const list = document.getElementById('cart-items-list');
+
+  if (cart.length === 0) {
+    subtitle.textContent = '0 items in your cart';
+    empty.style.display = 'block';
+    content.style.display = 'none';
+    return;
+  }
+
+  const totalItems = cart.reduce((s, i) => s + (i.qty || 1), 0);
+  subtitle.textContent = `${totalItems} item${totalItems !== 1 ? 's' : ''} in your cart`;
+  empty.style.display = 'none';
+  content.style.display = 'grid';
+
+  list.innerHTML = cart.map(item => {
+    const qty = item.qty || 1;
+    const itemTotal = (item.price * qty).toLocaleString('en-IN');
+    const itemIdAttr = item.cartItemId || item.id;
+    return `
+      <div class="cart-card">
+        <img class="cart-img" src="${item.image || 'https://images.unsplash.com/photo-1583391733956-6c78276477e1?auto=format&fit=crop&w=200&q=80'}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1583391733956-6c78276477e1?auto=format&fit=crop&w=200&q=80'">
+        <div class="cart-details">
+          <div class="cart-brand">${item.brand || 'Vogue Vista'}</div>
+          <div class="cart-name">${item.name}</div>
+          <div style="font-size: 11px; color: var(--blue); font-weight: 600; margin: 4px 0 10px;">Size: ${item.size || 'M'}</div>
+          <div class="cart-price">₹${Number(item.price).toLocaleString('en-IN')} <small style="font-size:11px;color:#718096;font-weight:400">× ${qty} = ₹${itemTotal}</small></div>
+          <div class="cart-qty">
+            <button class="qty-btn" onclick="changeQty('${itemIdAttr}', ${qty - 1})">−</button>
+            <div class="qty-num">${qty}</div>
+            <button class="qty-btn" onclick="changeQty('${itemIdAttr}', ${qty + 1})">+</button>
+          </div>
+        </div>
+        <button class="cart-remove" onclick="removeItem('${itemIdAttr}')" title="Remove"><i class="fas fa-trash-alt"></i></button>
+      </div>
+    `;
+  }).join('');
+
+  // Summary
+  const subtotal = cart.reduce((s, i) => s + i.price * (i.qty || 1), 0);
+  const discount = Math.round(subtotal * 0.05);
+  const total = subtotal - discount;
+  document.getElementById('cart-item-count').textContent = totalItems;
+  document.getElementById('summary-subtotal').textContent = '₹' + subtotal.toLocaleString('en-IN');
+  document.getElementById('summary-discount').textContent = '-₹' + discount.toLocaleString('en-IN');
+  document.getElementById('summary-total').textContent = '₹' + total.toLocaleString('en-IN');
+}
+
+function changeQty(id, newQty) {
+  if (newQty < 1) { removeItem(id); return; }
+  updateCart(id, newQty);
+  renderCart();
+}
+
+function removeItem(id) {
+  removeFromCart(id);
+  renderCart();
+  showToast('Item removed from cart');
+}
+
+document.addEventListener('DOMContentLoaded', renderCart);
+</script>
+</body>
+</html>

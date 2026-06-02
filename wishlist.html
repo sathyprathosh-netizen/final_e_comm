@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Wishlist – Vogue Vista</title>
+<meta name="description" content="View your saved favourites at Vogue Vista.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--blue:#1e40af;--blue-light:#60a5fa;--blue-dark:#1d4ed8;--dark:#0f172a;--text:#2d3748;--text-light:#718096;--border:#e2e8f0;--bg-light:#f8fafc;--radius-lg:16px;--radius-md:12px;--radius-sm:8px;--shadow-sm:0 2px 6px rgba(0,0,0,0.04);--shadow-md:0 8px 24px rgba(0,0,0,0.07);--transition:all 0.3s ease}
+  body{font-family:'Poppins',sans-serif;color:var(--text);background:#f8fafc;min-height:100vh}
+  a{text-decoration:none;color:inherit} ul{list-style:none}
+  header{background:#fff;border-bottom:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,0.04);position:sticky;top:0;z-index:100}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;max-width:1200px;margin:0 auto;gap:24px}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--blue),var(--blue-dark));border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:700}
+  .logo-text .brand{font-size:18px;font-weight:700;color:var(--dark)} .logo-text .tagline{font-size:9px;color:var(--text-light)}
+  .header-links{display:flex;align-items:center;gap:14px}
+  .header-links a{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--blue);padding:8px 16px;border-radius:30px;border:1.5px solid var(--border);transition:var(--transition)}
+  .header-links a:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .cart-link{position:relative}
+  .cart-count{position:absolute;top:-5px;right:-5px;background:#e11d48;color:#fff;font-size:9px;width:16px;height:16px;border-radius:50%;display:none;align-items:center;justify-content:center;font-weight:700}
+  /* MAIN */
+  .wishlist-page{max-width:1200px;margin:0 auto;padding:40px 24px}
+  .page-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:30px;flex-wrap:wrap;gap:14px}
+  .page-title{font-size:28px;font-weight:700;color:var(--dark)}
+  .page-subtitle{font-size:13px;color:var(--text-light);margin-top:4px}
+  .btn-clear{background:none;border:1.5px solid #e11d48;color:#e11d48;padding:8px 18px;border-radius:30px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;transition:var(--transition)}
+  .btn-clear:hover{background:#e11d48;color:#fff}
+  /* EMPTY */
+  .empty-state{background:#fff;border-radius:var(--radius-lg);padding:70px 40px;text-align:center;box-shadow:var(--shadow-sm);margin-top:20px}
+  .empty-icon{font-size:60px;color:#fda4af;margin-bottom:16px}
+  .empty-title{font-size:22px;font-weight:700;color:var(--dark);margin-bottom:8px}
+  .empty-sub{font-size:13px;color:var(--text-light);margin-bottom:28px}
+  .btn-explore{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#e11d48,#be123c);color:#fff;padding:13px 32px;border-radius:30px;font-size:13px;font-weight:600;transition:var(--transition)}
+  .btn-explore:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(225,29,72,0.35)}
+  /* GRID */
+  .wishlist-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .wl-card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition);position:relative}
+  .wl-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px)}
+  .wl-img-wrap{aspect-ratio:3/4;overflow:hidden;background:#f7f8fc;position:relative}
+  .wl-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease}
+  .wl-card:hover .wl-img-wrap img{transform:scale(1.05)}
+  .wl-remove{position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.95);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;color:#e11d48;transition:var(--transition);z-index:2}
+  .wl-remove:hover{background:#e11d48;color:#fff;transform:scale(1.1)}
+  .wl-heart{position:absolute;top:10px;left:10px;width:32px;height:32px;border-radius:50%;background:rgba(225,29,72,0.1);display:flex;align-items:center;justify-content:center;font-size:14px;color:#e11d48}
+  .wl-info{padding:14px 16px 16px}
+  .wl-brand{font-size:9px;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px;font-weight:600;margin-bottom:4px}
+  .wl-name{font-size:13px;font-weight:600;color:var(--dark);margin-bottom:8px;line-height:1.4;height:36px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .wl-price{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:10px}
+  .btn-wl-cart{width:100%;background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;border:none;padding:10px;border-radius:var(--radius-sm);font-size:12px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;display:flex;align-items:center;justify-content:center;gap:6px;transition:var(--transition)}
+  .btn-wl-cart:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(30,64,175,0.3)}
+  footer{text-align:center;padding:24px;font-size:12px;color:var(--text-light);border-top:1px solid var(--border);margin-top:40px}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">VV</div>
+      <div class="logo-text"><div class="brand">Vogue Vista</div><div class="tagline">Your Fashion, Our Passion!</div></div>
+    </a>
+    <div class="header-links">
+      <a href="index.html"><i class="fas fa-store"></i> Continue Shopping</a>
+      <a href="cart.html" class="cart-link">
+        <i class="fas fa-shopping-bag"></i> Cart
+        <span class="cart-count" id="cart-badge"></span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="wishlist-page">
+  <div class="page-header">
+    <div>
+      <div class="page-title">❤️ My Wishlist</div>
+      <div class="page-subtitle" id="wl-subtitle">Loading…</div>
+    </div>
+    <button class="btn-clear" id="clear-btn" onclick="clearAll()" style="display:none">
+      <i class="fas fa-trash-alt"></i> Clear All
+    </button>
+  </div>
+
+  <div id="wl-empty" class="empty-state" style="display:none">
+    <div class="empty-icon"><i class="far fa-heart"></i></div>
+    <div class="empty-title">Your wishlist is empty</div>
+    <div class="empty-sub">Save your favourite items by clicking the heart icon on any product.</div>
+    <a href="index.html" class="btn-explore"><i class="fas fa-fire"></i> Explore Collections</a>
+  </div>
+
+  <div id="wl-grid" class="wishlist-grid"></div>
+</main>
+
+<footer>© 2025 Vogue Vista. All Rights Reserved.</footer>
+
+<script src="store.js"></script>
+<script>
+function renderWishlist() {
+  const list = getWishlist();
+  const subtitle = document.getElementById('wl-subtitle');
+  const empty = document.getElementById('wl-empty');
+  const grid = document.getElementById('wl-grid');
+  const clearBtn = document.getElementById('clear-btn');
+
+  // update cart badge
+  const cartCount = getCart().reduce((s, i) => s + (i.qty || 1), 0);
+  const badge = document.getElementById('cart-badge');
+  if (badge) { badge.textContent = cartCount; badge.style.display = cartCount > 0 ? 'flex' : 'none'; }
+
+  if (list.length === 0) {
+    subtitle.textContent = '0 saved items';
+    empty.style.display = 'block';
+    grid.style.display = 'none';
+    clearBtn.style.display = 'none';
+    return;
+  }
+
+  subtitle.textContent = `${list.length} saved item${list.length !== 1 ? 's' : ''}`;
+  empty.style.display = 'none';
+  grid.style.display = 'grid';
+  clearBtn.style.display = 'block';
+
+  grid.innerHTML = list.map(item => `
+    <div class="wl-card">
+      <div class="wl-img-wrap">
+        <img src="${item.image || 'https://images.unsplash.com/photo-1583391733956-6c78276477e1?auto=format&fit=crop&w=400&q=80'}" 
+             alt="${item.name}" 
+             onerror="this.src='https://images.unsplash.com/photo-1583391733956-6c78276477e1?auto=format&fit=crop&w=400&q=80'">
+        <div class="wl-heart"><i class="fas fa-heart"></i></div>
+        <button class="wl-remove" onclick="removeWL('${item.id}')" title="Remove from Wishlist"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="wl-info">
+        <div class="wl-brand">${item.brand || 'Vogue Vista'}</div>
+        <div class="wl-name">${item.name}</div>
+        <div class="wl-price">₹${Number(item.price || 0).toLocaleString('en-IN')}</div>
+        <button class="btn-wl-cart" onclick="moveToCart('${item.id}')">
+          <i class="fas fa-shopping-bag"></i> Add to Cart
+        </button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function removeWL(id) {
+  removeFromWishlist(id);
+  renderWishlist();
+  showToast('Removed from Wishlist');
+}
+
+function moveToCart(id) {
+  const item = getWishlist().find(i => i.id === id);
+  if (item) {
+    addToCart(item);
+    renderWishlist();
+  }
+}
+
+function clearAll() {
+  if (confirm('Clear all wishlist items?')) {
+    localStorage.removeItem('vv_wishlist');
+    renderWishlist();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', renderWishlist);
+</script>
+</body>
+</html>
